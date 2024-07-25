@@ -6,23 +6,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Service {
+@Data
+public class Violence {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "service_id")
+    @Column(name = "violance_id")
     private Long id;
 
-    private String serviceName;
+    private String descViolance;
 
-    private String serviceDescription;
+    private String agresseur;
 
-    private String entiteReferente;
-
-    private String entiteRefere;
-
-    private String etat;
+    private String lieuViolance;
 
 }

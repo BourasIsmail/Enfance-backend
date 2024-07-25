@@ -51,7 +51,7 @@ public class Beneficiaire {
 
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "service_id")
-    private Service service;
+    private Services services;
 
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "rue_id")
@@ -71,6 +71,10 @@ public class Beneficiaire {
 
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "violance_id")
-    private Violance violance;
+    private Violence violence;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "province_id")
+    private Province province;
 
 }
