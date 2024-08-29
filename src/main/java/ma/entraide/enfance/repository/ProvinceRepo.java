@@ -13,9 +13,15 @@ import java.util.List;
 @Repository
 public interface ProvinceRepo extends JpaRepository<Province, Long> ,
         PagingAndSortingRepository<Province, Long> {
+    // Compter le nombre d'utilisateurs par province
+    @Query("SELECT COUNT(u) FROM UserInfo u WHERE u.province.id = :provinceId")
+    int countUsersByProvinceId(@Param("provinceId") Long provinceId);
 
-    @Query("SELECT d FROM Province d WHERE d.region.id = :id")
-    public List<Province> findByRegionId(@Param("id") Long id);
+    // Récupérer toutes les provinces
+    @Query("SELECT p FROM Province p WHERE p.region.id = :regionId")
+    List<Province> findByRegionId(@Param("regionId") Long regionId);
 
+    @Query("SELECT p FROM Province p WHERE p.name = :name")
+    Province findByName(@Param("name") String name);
 
 }

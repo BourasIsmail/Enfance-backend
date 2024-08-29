@@ -42,6 +42,9 @@ public class UserInfo {
         this.password = password;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "region_id")
+    private Region region;
 
 
 }

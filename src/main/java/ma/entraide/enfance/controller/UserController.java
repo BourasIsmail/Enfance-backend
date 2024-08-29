@@ -110,5 +110,10 @@ public class UserController {
             throw new UsernameNotFoundException("Invalid email address");
         }
     }
+    @GetMapping("/dashboard")
+    public ResponseEntity<Object> getDashboard() {
+        return ResponseEntity.ok(userInfoService.dashboard());
+    }
+
 
 }

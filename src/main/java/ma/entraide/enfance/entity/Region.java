@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,4 +18,8 @@ public class Region {
     private Long id;
 
     private String name;
+    @OneToMany(mappedBy = "region")
+    private List<UserInfo> users;
+    @OneToMany(mappedBy = "region")
+    private List<Province> provinces;
 }
