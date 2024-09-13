@@ -111,4 +111,9 @@ public class UserController {
         }
     }
 
+    @GetMapping("/dashboard")
+    public ResponseEntity<Object> getDashboard() {
+        return ResponseEntity.ok(userInfoService.dashboard());
+    }
+
 }

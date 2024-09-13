@@ -19,7 +19,9 @@ public class SituationDeRue {
 
     private String origineEnfant;
 
-    private int durreDansRue;
+    private String durreDansRue;
+
+    private String autreDuree;
 
     private String frequenceRue;
 

@@ -21,8 +21,14 @@ public class Services {
 
     private String entiteReferente;
 
+    private String autreReferente;
+
     private String entiteRefere;
 
+    private String autreRefere;
+
     private String etat;
+
+    private String detailEtatFerme;
 
 }

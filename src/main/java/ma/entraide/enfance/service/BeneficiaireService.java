@@ -76,6 +76,7 @@ public class BeneficiaireService {
         SituationFamilial situationFamilial = situationFamilialService.addSituationFamilial(ben.getSituationFamilial());
         SituationFinanciere situationFinanciere = situationFinanciereService.addSituationFinanciere(ben.getSituationFinanciere());
         SituationMedical situationMedical = situationMedicalService.addSituationMedical(ben.getSituationMedical());
+
         Violence violence = violenceService.addViolence(ben.getViolence());
         beneficiaireRepo.save(ben);
         return "beneficiaires added successfully";

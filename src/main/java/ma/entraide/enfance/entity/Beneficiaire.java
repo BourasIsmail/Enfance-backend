@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -23,7 +25,7 @@ public class Beneficiaire {
 
     private String groupeAge;
 
-    private Boolean scolarite;
+    private String scolarite;
 
     private String niveauScolaire;
 

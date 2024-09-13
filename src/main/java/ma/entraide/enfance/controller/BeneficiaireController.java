@@ -35,6 +35,7 @@ public class BeneficiaireController {
             String result = beneficiaireService.addBeneficiaire(beneficiaire);
             return new ResponseEntity<>(result, HttpStatus.CREATED);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }

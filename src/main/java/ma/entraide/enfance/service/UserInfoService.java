@@ -116,6 +116,28 @@ public class UserInfoService implements UserDetailsService {
                 userInfoRepository.save(existingUser);
                 return "User updated successfully";
             }
+    public int getUsersCountByRegion(Long regionId) {
+        return userInfoRepository.countUsersByRegionId(regionId);
+    }
+
+    public int getUsersCountByProvince(Long provinceId) {
+        return userInfoRepository.countUsersByProvinceId(provinceId);
+    }
+
+    public Object dashboard() {
+        Object data = new Object() {
+            // Par région
+            public int nbrUsersRegion1 = getUsersCountByRegion(1L); // Exemple pour la région avec id 1
+            public int nbrUsersRegion2 = getUsersCountByRegion(2L); // Exemple pour la région avec id 2
+
+            // Par province
+            public int nbrUsersProvince1 = getUsersCountByProvince(1L); // Exemple pour la province avec id 1
+            public int nbrUsersProvince2 = getUsersCountByProvince(2L); // Exemple pour la province avec id 2
+
+            public int totalUsers = nbrUsersRegion1 + nbrUsersRegion2 + nbrUsersProvince1 + nbrUsersProvince2; // Total (peut être calculé de manière dynamique)
+        };
+        return data;
+    }
 
 
 }
