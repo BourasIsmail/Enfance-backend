@@ -68,16 +68,34 @@ public class BeneficiaireService {
         ben.setCentre(centre);
         Province province = provinceService.getProvinceById(ben.getProvince().getId());
         ben.setProvince(province);
-        ClassificationCas classificationCas = classificationCasService.addClassificationCas(ben.getClassificationCas());
-        Handicap handicap = handicapService.addHandicap(ben.getHandicap());
-        Mendicite mendicite = mendiciteService.addMendicite(ben.getMendicite());
-        Services services = serviceService.saveService(ben.getServices());
-        SituationDeRue situationDeRue = situationDeRueService.addSituationDeRue(ben.getSituationDeRue());
-        SituationFamilial situationFamilial = situationFamilialService.addSituationFamilial(ben.getSituationFamilial());
-        SituationFinanciere situationFinanciere = situationFinanciereService.addSituationFinanciere(ben.getSituationFinanciere());
-        SituationMedical situationMedical = situationMedicalService.addSituationMedical(ben.getSituationMedical());
-
-        Violence violence = violenceService.addViolence(ben.getViolence());
+        if(ben.getClassificationCas() != null) {
+            ClassificationCas classificationCas = classificationCasService.addClassificationCas(ben.getClassificationCas());
+        }
+        if(ben.getHandicap() != null) {
+            Handicap handicap = handicapService.addHandicap(ben.getHandicap());
+        }
+        if(ben.getMendicite() != null) {
+            Mendicite mendicite = mendiciteService.addMendicite(ben.getMendicite());
+        }
+        if(ben.getServices() != null) {
+            Services services = serviceService.saveService(ben.getServices());
+        }
+        if(ben.getSituationDeRue() != null) {
+            SituationDeRue situationDeRue = situationDeRueService.addSituationDeRue(ben.getSituationDeRue());
+        }
+        if(ben.getSituationFamilial() != null) {
+            SituationFamilial situationFamilial = situationFamilialService.addSituationFamilial(ben.getSituationFamilial());
+        }
+        if(ben.getSituationFinanciere() != null) {
+            SituationFinanciere situationFinanciere = situationFinanciereService.addSituationFinanciere(ben.getSituationFinanciere());
+        }
+        if(ben.getSituationMedical() != null) {
+            SituationMedical situationMedical = situationMedicalService.addSituationMedical(ben.getSituationMedical());
+        }
+        if(ben.getViolence() != null)
+        {
+            Violence violence = violenceService.addViolence(ben.getViolence());
+        }
         beneficiaireRepo.save(ben);
         return "beneficiaires added successfully";
     }
