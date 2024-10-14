@@ -40,7 +40,7 @@ public class BeneficiaireController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<String> updateBeneficiaire(@PathVariable Long id, @RequestBody Beneficiaire beneficiaireDetails) {
         try {
             String result = beneficiaireService.updateBeneficiaire(id, beneficiaireDetails);
